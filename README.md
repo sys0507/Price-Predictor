@@ -62,6 +62,9 @@ Price_predictor/
 ├── regression modeling.ipynb           # Main analysis notebook
 ├── data/
 │   └── sample_data.csv                # Sample dataset
+├── results/                            # Model performance visualizations
+│   ├── performance.png                # Radar plots of all models
+│   └── stacking regressor.png         # Stacking Regressor predictions
 └── XoX_Price_Prediction_Model.pptx    # Project presentation
 ```
 
@@ -171,7 +174,32 @@ Each model undergoes GridSearchCV optimization with model-specific parameter gri
 ### Stacking Strategy
 The Stacking Regressor combines top-performing base models with a meta-learner to achieve superior prediction accuracy.
 
-## Results & Insights
+## Results
+
+### Model Performance Comparison
+
+The following radar plots show the normalized performance metrics (MAE, MSE, R²) for all models across both training and test sets:
+
+![Model Performance Radar Plots](results/performance.png)
+
+**Key Observations:**
+- XGBoost and Gradient Boosting show the most balanced performance across all metrics
+- Random Forest demonstrates strong R² scores on both train and test sets
+- Lasso Regression shows signs of underfitting with lower overall performance
+- Models with PCA show different metric patterns compared to non-PCA versions
+
+### Stacking Regressor Performance
+
+The Stacking Regressor combines the best-performing models to achieve superior prediction accuracy:
+
+![Stacking Regressor - Predicted vs Actual](results/stacking%20regressor.png)
+
+**Performance Highlights:**
+- Strong correlation between predicted and actual prices on both train and test sets
+- Good generalization with similar performance patterns across train/test splits
+- Effective handling of the full price range from low to high-cost products
+
+### Model Insights
 
 The notebook provides comprehensive analysis including:
 - Feature importance rankings
