@@ -1,4 +1,4 @@
-# XoX Price Prediction Model
+# XoX Price Prediction Model 🏦
 
 A comprehensive machine learning project for predicting XoX product prices using multiple regression algorithms and ensemble methods.
 
